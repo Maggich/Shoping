@@ -17,6 +17,7 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST':
+        name = request.POST.get('name')
         form = LoginForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
